@@ -9,8 +9,8 @@ public class GameInterface {
     private JButton playButton;
     private JLabel label;
     private Container container;
-    private static final int WIDTH = 700;
-    private static final int HEIGHT = 800;
+    private static final int WIDTH = 800;
+    private static final int HEIGHT = 750;
 
     public GameInterface() {
         makeFrame();

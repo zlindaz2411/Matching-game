@@ -4,29 +4,22 @@ import javax.swing.*;
 
 public class Card extends JButton{
 
-    private static final int TOTAL_NUMBER = 36;
-    private String text;
+    private String content;
 
   public Card()
   {
+      content = "";
   }
 
-  public String getText()
+
+  public String getContent()
   {
-      return text;
+      return content;
   }
-  public void setText(String a)
+
+  public void setContent(String a )
   {
-      text = a;
-  }
-  public String setNumber()
-  {
-      String a = "";
-      for(int i =1; i<=TOTAL_NUMBER; i++)
-      {
-          a = i + "";
-      }
-      return a;
+     content = a;
   }
 
 }
