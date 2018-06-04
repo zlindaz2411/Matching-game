@@ -9,8 +9,8 @@ public class GameInterface {
     private JButton playButton;
     private JLabel label;
     private Container container;
-    private static final int WIDTH = 800;
-    private static final int HEIGHT = 750;
+    private static final int WIDTH = 850;
+    private static final int HEIGHT = 700;
 
     public GameInterface() {
         makeFrame();
@@ -61,7 +61,6 @@ public class GameInterface {
         panel.add(game, BorderLayout.CENTER);
         frame.repaint();
         frame.revalidate();
-        game.requestFocusInWindow();
     }
 
 }
