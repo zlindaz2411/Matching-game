@@ -29,7 +29,7 @@ public class Game extends JPanel{
 
     }
 
-    public void populate()
+    private void populate()
     {
 
         for(int x = 0; x<ROWS; x++){
@@ -52,7 +52,7 @@ public class Game extends JPanel{
     }
 
 
-                public void setCardContent() {
+               private void setCardContent() {
                     String[] animal = {"dog", "cat", "fish", "lion", "bird", "tiger", "rat", "snake",
                             "sheep", "pig", "chicken", "horse", "elephant", "cow", "rabbit", "monkey", "duck", "turtle"};
 
@@ -95,7 +95,7 @@ public class Game extends JPanel{
                 }
 
 
-    public boolean match()
+    private boolean match()
     {
 
         if(hasLeft && hasRight)
@@ -108,7 +108,7 @@ public class Game extends JPanel{
         return false;
     }
 
-    public void play(Card a)
+    private void play(Card a)
     {
         if(numberPressed !=2)
         {
@@ -120,7 +120,7 @@ public class Game extends JPanel{
         }
     }
 
-    public void openCard(Card a)
+    private void openCard(Card a)
     {
 
         if(numberPressed!=2) {
@@ -160,7 +160,7 @@ public class Game extends JPanel{
         }
     }
 
-    public void closeCard()
+    private  void closeCard()
     {
         left.setText("");
         hasLeft = false;
@@ -169,7 +169,7 @@ public class Game extends JPanel{
         numberPressed = 0;
     }
 
-    public void replace(Component a, Component c)
+    private void replace(Component a, Component c)
     {
 
         int index = getComponentZOrder(a);
@@ -177,7 +177,7 @@ public class Game extends JPanel{
         add(c, index);
     }
 
-    public boolean containsTwice(ArrayList<Integer>list, int a)
+    private boolean containsTwice(ArrayList<Integer>list, int a)
     {
         Iterator<Integer> iterator = list.iterator();
 

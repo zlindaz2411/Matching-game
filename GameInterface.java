@@ -16,7 +16,7 @@ public class GameInterface {
         makeFrame();
     }
 
-    public void makeFrame()
+    private void makeFrame()
     {
         frame = new JFrame();
         container = frame.getContentPane();
@@ -28,7 +28,7 @@ public class GameInterface {
         frame.setVisible(true);
     }
 
-    public void makePlayPanel()
+    private void makePlayPanel()
     {
         playPanel = new JPanel();
         panel = new JPanel();
@@ -53,7 +53,7 @@ public class GameInterface {
         container.add(panel, BorderLayout.CENTER);
     }
 
-    public void play()
+    private void play()
     {
         panel.removeAll();
         Game game = new Game();
