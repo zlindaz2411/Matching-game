@@ -52,47 +52,37 @@ public class Game extends JPanel{
     }
 
 
-               private void setCardContent() {
-                    String[] animal = {"dog", "cat", "fish", "lion", "bird", "tiger", "rat", "snake",
-                            "sheep", "pig", "chicken", "horse", "elephant", "cow", "rabbit", "monkey", "duck", "turtle"};
 
-                    ArrayList<Integer> indeces = new ArrayList<>();
-                    ArrayList<String> animals = new ArrayList<>(Arrays.asList(animal));
+    private void setCardContent() {
+        String[] animal = {"dog", "cat", "fish", "lion", "bird", "tiger", "rat", "snake",
+                "sheep", "pig", "chicken", "horse", "elephant", "cow", "rabbit", "monkey", "duck", "turtle"};
 
-                    int index = random.nextInt(animals.size());
-                    for (int i = 0; i<cards.size()/2; i++)
-                    {
-                        cards.get(i).setContent(animals.get(index));
-                        index = random.nextInt(animals.size());
-                        indeces.add(index);
+        ArrayList<String> animals = new ArrayList<>(Arrays.asList(animal));
+        ArrayList<String>contents = new ArrayList<>();
 
-                        if (containsTwice(indeces, index)) {
-                            cards.get(i).setContent(animals.get(index));
-                            animals.remove(index);
-                            if(!animals.isEmpty())
-                            {
-                            index = random.nextInt(animals.size());
-                        }
+        int index = random.nextInt(animals.size());
 
-                    }}
-                    indeces = new ArrayList<>();
-                    animals = animals = new ArrayList<>(Arrays.asList(animal));
-                    for (int j = cards.size()/2; j<cards.size(); j++)
-                    {
-                        cards.get(j).setContent(animals.get(index));
-                        index = random.nextInt(animals.size());
-                        indeces.add(index);
+        for (int i = 0; i<cards.size(); i++)
+        {
 
-                        if (containsTwice(indeces, index)){
-                        cards.get(j).setContent(animals.get(index));
-                        animals.remove(index);
-                        if(!animals.isEmpty())
-                        {
-                            index = random.nextInt(animals.size());
-                        }
+            cards.get(i).setContent(animals.get(index));
+            contents.add(cards.get(i).getContent());
+            index = random.nextInt(animals.size());
 
-                    }}
+            if (containsDuplicate(contents, contents.get(i))) {
+
+                animals.remove(contents.get(i));
+                if(!animals.isEmpty())
+                {
+                    index = random.nextInt(animals.size());
                 }
+
+
+            }
+
+        }
+
+    }
 
 
     private boolean match()
@@ -177,20 +167,19 @@ public class Game extends JPanel{
         add(c, index);
     }
 
-    private boolean containsTwice(ArrayList<Integer>list, int a)
+
+    private boolean containsDuplicate(ArrayList<String>list, String a)
     {
-        Iterator<Integer> iterator = list.iterator();
 
-        while(iterator.hasNext())
-        {
-            int i = iterator.next();
-            if(i==a) {
-
-                return true;
-            }
+        int count = Collections.frequency(list, a);
+        if(count == 2){
+            return true;
 
         }
-        return false;
+        else
+        {
+            return false;
+        }
 
     }
 }

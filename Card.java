@@ -1,18 +1,16 @@
 package com.company;
 
-import javax.swing.*;
+import javax.swing.JButton;
 
 
 public class Card extends JButton{
 
     private String content;
-    private boolean hasContent;
 
 
   public Card()
   {
       content = "";
-      hasContent = false;
   }
 
 
@@ -26,13 +24,6 @@ public class Card extends JButton{
 
       content = a;
   }
-  public boolean getHasContent()
-  {
-      return hasContent;
-  }
-  public void setHasContent(boolean a)
-  {
-      hasContent = a;
-  }
+
 
 }
